@@ -27,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReversePipe } from './pipes/reverse.pipe';
 import { StarPipe } from './pipes/star.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { MatchInfoComponent } from './composants/match-info/match-info.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { HttpClientModule } from '@angular/common/http';
     TeamsTableComponent,
     ReversePipe,
     StarPipe,
+    MatchInfoComponent,
   ],
   imports: [
     BrowserModule,

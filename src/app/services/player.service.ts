@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PlayerService {
-  playerURL : string = "http://localhost:8090/api/players/"
+  playerURL : string = "http://localhost:8090/api/players"
   constructor(private httpClient : HttpClient) { }
 
   getAllPlayers(){

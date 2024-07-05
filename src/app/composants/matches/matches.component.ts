@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { matchesTab } from 'src/app/shared/data';
+import { MatchService } from 'src/app/services/match.service';
 
 @Component({
   selector: 'app-matches',
@@ -7,22 +7,17 @@ import { matchesTab } from 'src/app/shared/data';
   styleUrls: ['./matches.component.css']
 })
 export class MatchesComponent implements OnInit {
-  data : string ="Matches"
-  T = []
+  // data : string ="Matches"
+  T :any = []
   date :any = new Date()
-  constructor() { }
+  constructor(private mService:MatchService) { }
 
   ngOnInit(): void {
-    this.getAllMatches()
-  }
-
-  getAllMatches(){
-
-    this.T = JSON.parse(localStorage.getItem('matches') || "[]")
-
-    console.log(this.T);
-    
-    
+    this.mService.getAllMatches().subscribe((res)=>{
+      console.log("this is respoonse from BE", res);
+      this.T =  res ;
+      
+    })
   }
 
 }

@@ -20,9 +20,9 @@
             <td>{{elt.scoreOne}}</td>
             <td>{{elt.scoreTwo}}</td>
             <td>
-                <button class="btn btn-info">Display</button>
+                <button class="btn btn-info" (click)="goToInfo(elt.id)">Display</button>
                 <button class="btn btn-warning">Edit</button>
-                <button class="btn btn-danger">Delete</button>
+                <button class="btn btn-danger" (click)="deleteMatch(elt.id)">Delete</button>
             </td>
           </tr>
           

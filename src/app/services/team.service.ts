@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class TeamService {
 
-  teamURL : string = "http://localhost:8090/api/teams/"
+  teamURL : string = "http://localhost:8090/api/teams"
   constructor(private httpClient : HttpClient) { }
 
   getAllTeams(){

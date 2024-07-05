@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-add-player',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddPlayerComponent implements OnInit {
 
+  addPlayerForm !: FormGroup;
+  player : any ={};
   constructor() { }
 
   ngOnInit(): void {
+  }
+  addPlayer(){
+    console.log("this is player ," , this.player)
   }
 
 }

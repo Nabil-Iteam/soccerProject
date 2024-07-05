@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MatchService {
-  matchURL : string = "http://localhost:8090/api/matches/"
+  matchURL : string = "http://localhost:8090/api/matches"
   constructor(private httpClient : HttpClient) { }
 
   getAllMatches(){
@@ -21,10 +21,10 @@ export class MatchService {
   }
 
   getMatchById(id:number){
-    return this.httpClient.get(this.matchURL+id)
+    return this.httpClient.get(this.matchURL+ "/" +id)
   }
 
   deleteMatchById(id : number){
-    return this.httpClient.delete(this.matchURL+id)
+    return this.httpClient.delete(this.matchURL+ "/" +id)
   }
 }

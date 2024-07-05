@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { matchesTab } from 'src/app/shared/data';
+import { Router } from '@angular/router';
+import { MatchService } from 'src/app/services/match.service';
+//import { matchesTab } from 'src/app/shared/data';
 
 @Component({
   selector: 'app-matches-table',
@@ -9,10 +11,28 @@ import { matchesTab } from 'src/app/shared/data';
 export class MatchesTableComponent implements OnInit {
   x : any = 120;
 
-allMatches = matchesTab;
-  constructor() { }
+allMatches : any = [];
+  constructor(private mService : MatchService,
+    private router:Router) { }
 
   ngOnInit(): void {
+    this.mService.getAllMatches().subscribe((res)=>{
+      console.log("this is res from BE",res ) 
+        this.allMatches = res;
+      });
+      
   }
 
-}
+  deleteMatch(id:number){
+    this.mService.deleteMatchById(id).subscribe(()=>{
+      this.mService.getAllMatches().subscribe((response)=>{
+        this.allMatches =response;
+      });
+    });
+  }
+
+  goToInfo(id: number){
+    this.router.navigate(['matchInfo/'+id])
+  }
+  }
+
