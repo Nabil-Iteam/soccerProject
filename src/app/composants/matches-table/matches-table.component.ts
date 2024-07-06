@@ -34,5 +34,12 @@ allMatches : any = [];
   goToInfo(id: number){
     this.router.navigate(['matchInfo/'+id])
   }
+
+  goToEdit(id: number){
+    this.router.navigate(['editMatch/'+id])
+
+  }
+
+  
   }
 

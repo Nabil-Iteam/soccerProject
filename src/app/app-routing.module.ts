@@ -10,6 +10,7 @@ import { AddMatchComponent } from './composants/add-match/add-match.component';
 import { AddTeamComponent } from './composants/add-team/add-team.component';
 import { AdminComponent } from './composants/admin/admin.component';
 import { MatchInfoComponent } from './composants/match-info/match-info.component';
+import { EditMatchComponent } from './composants/edit-match/edit-match.component';
 
 const routes: Routes = [
   {path:"contact",component: ContactComponent} ,
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:"addTeam",component: AddTeamComponent} ,
   {path:"admin",component: AdminComponent} ,
   {path:"matchInfo/:id",component: MatchInfoComponent} ,
+  {path:"editMatch/:id",component:EditMatchComponent} ,
 
 ];
 
