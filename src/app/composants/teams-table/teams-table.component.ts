@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TeamService } from 'src/app/services/team.service';
 
 @Component({
   selector: 'app-teams-table',
@@ -6,15 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teams-table.component.css']
 })
 export class TeamsTableComponent implements OnInit {
-  teamsTab : any = [
-    {id :1,name :"EST" ,owner :"Meddeb",foundation :1919},
-    {id :2,name :"ESS" ,owner :"Charfeddine",foundation :1930},
-    {id :3,name :"CA" ,owner :"Younsi",foundation :1920},
-  ]
+  teamsTab : any = []
 
-  constructor() { }
+  constructor(private tService : TeamService) {}
 
   ngOnInit(): void {
+    this.tService.getAllTeams().subscribe(
+      (res)=>{
+        this.teamsTab = res ;
+      }
+    )
   }
 
 }

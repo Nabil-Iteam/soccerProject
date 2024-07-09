@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
   selector: 'app-players-table',
@@ -7,16 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayersTableComponent implements OnInit {
 
-  playersTab : any = [
-    {id :1,name :"AHMED" ,position :"DEFF",number :23,age:20},
-    {id :2,name :"SAAD" ,position :"DEFF",number :3,age:37},
-    {id :2,name :"ALI" ,position :"GARD",number :2,age:17},
-    {id :4,name :"AHMED" ,position :"ATT",number :7,age:30},
-      ]
+  playersTab : any = []
 
-  constructor() { }
+  constructor(private pService : PlayerService) { }
 
   ngOnInit(): void {
+    this.pService.getAllPlayers().subscribe(
+      (res)=>{
+        this.playersTab = res;
+      }
+    )
   }
 
 }

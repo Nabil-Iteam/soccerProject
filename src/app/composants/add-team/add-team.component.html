@@ -17,12 +17,12 @@
           <form (ngSubmit)="addTeam()" #addPlayerForm="ngForm">
             <div class="form-group">
             <div class="form-group">
-                <input type="Name" class="form-control" [(ngModel)]="team.name" name="name" placeholder="Name">
+                <input type="Name" class="form-control" [(ngModel)]="team.name" [ngModelOptions]="{standalone:true}" placeholder="Name">
             </div>
-              <input type="text" class="form-control" [(ngModel)]="team.owner" name="owner" placeholder="Owner">
+              <input type="text" class="form-control" [(ngModel)]="team.owner" [ngModelOptions]="{standalone:true}" placeholder="Owner">
             </div>
             <div class="form-group">
-              <input type="number" class="form-control" [(ngModel)]="team.foundation" name="foundation" placeholder="Foundation">
+              <input type="number" class="form-control" [(ngModel)]="team.foundation" [ngModelOptions]="{standalone:true}" placeholder="Foundation">
             </div>
             <div class="form-group">
               <input type="submit" class="btn btn-primary py-3 px-5" value="Add Team">
